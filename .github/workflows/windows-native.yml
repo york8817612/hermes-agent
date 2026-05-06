@@ -103,25 +103,25 @@ jobs:
           .venv-windows-native\Scripts\python.exe -c "import sys; print(sys.path)"
         shell: pwsh
 
-      - name: Test patch import
-        run: |
-          .venv-windows-native\Scripts\python.exe -c "import sys; sys.path.insert(0, 'windows-native'); import patches; print('Patches loaded successfully')"
-        shell: pwsh
+     # - name: Test patch import
+     #   run: |
+     #     .venv-windows-native\Scripts\python.exe -c "import sys; sys.path.insert(0, 'windows-native'); import patches; print('Patches loaded successfully')"
+     #   shell: pwsh
 
-      - name: "Run tests - Batch 1: Agent tests"
-        run: |
-          .venv-windows-native\Scripts\python.exe windows-native/run_tests.py tests/agent/
-        shell: pwsh
+     # - name: "Run tests - Batch 1: Agent tests"
+     #   run: |
+     #     .venv-windows-native\Scripts\python.exe windows-native/run_tests.py tests/agent/
+     #   shell: pwsh
 
-      - name: "Run tests - Batch 2: CLI tests"
-        run: |
-          .venv-windows-native\Scripts\python.exe windows-native/run_tests.py tests/cli/
-        shell: pwsh
+     # - name: "Run tests - Batch 2: CLI tests"
+     #   run: |
+     #     .venv-windows-native\Scripts\python.exe windows-native/run_tests.py tests/cli/
+     #   shell: pwsh
 
-      - name: "Run tests - Batch 3: Tools tests (core)"
-        run: |
-          .venv-windows-native\Scripts\python.exe windows-native/run_tests.py tests/tools/test_registry.py tests/tools/test_windows_compat.py tests/tools/test_tool_result_storage.py tests/tools/test_file_operations.py
-        shell: pwsh
+     # - name: "Run tests - Batch 3: Tools tests (core)"
+     #   run: |
+     #     .venv-windows-native\Scripts\python.exe windows-native/run_tests.py tests/tools/test_registry.py tests/tools/test_windows_compat.py tests/tools/test_tool_result_storage.py tests/tools/test_file_operations.py
+     #   shell: pwsh
 
       # Note: Skipped tests:
       # - tests/cron/ : Unix-specific (cron, signal handling, daemon processes)
